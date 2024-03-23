@@ -1,0 +1,25 @@
+{
+  "description": "Test plugin for integration testing purposes",
+  "dependencies": {
+    "haml": "0.4.3"
+  },
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "rimraf": "3.0.0"
+  },
+  "license": "MIT",
+  "main": "./index.js",
+  "name": "embark-dapp-test-service",
+  "private": true,
+  "scripts": {
+    "ci": "npm run qa",
+    "clean": "npm run reset",
+    "lint": "eslint *.js",
+    "qa": "npm-run-all lint",
+    "reset": "npx rimraf embark-*.tgz package"
+  },
+  "eslintConfig": {
+    "extends": "../../../.eslintrc.json"
+  },
+  "version": "5.2.3"
+}

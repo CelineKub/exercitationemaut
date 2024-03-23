@@ -1,0 +1,56 @@
+{
+  "name": "embark-plugin-cmd",
+  "version": "5.3.0-nightly.12",
+  "author": "Iuri Matias <iuri.matias@gmail.com>",
+  "contributors": [],
+  "description": "Plugin installation utility for Embark",
+  "homepage": "https://github.com/embarklabs/embark/tree/master/packages/plugins/plugin-cmd#readme",
+  "bugs": "https://github.com/embarklabs/embark/issues",
+  "license": "MIT",
+  "repository": {
+    "directory": "packages/plugins/plugin-cmd",
+    "type": "git",
+    "url": "https://github.com/embarklabs/embark.git"
+  },
+  "files": [
+    "dist",
+    "index.js"
+  ],
+  "main": "./index.js",
+  "types": "./dist/index.d.ts",
+  "embark-collective": {
+    "build:node": true,
+    "typecheck": true
+  },
+  "scripts": {
+    "_build": "npm run solo -- build",
+    "_typecheck": "npm run solo -- typecheck",
+    "ci": "npm run qa",
+    "clean": "npm run reset",
+    "lint": "eslint src/",
+    "qa": "npm-run-all lint _typecheck _build",
+    "reset": "npx rimraf dist embark-*.tgz package",
+    "solo": "embark-solo"
+  },
+  "eslintConfig": {
+    "extends": "../../../.eslintrc.json"
+  },
+  "dependencies": {
+    "@babel/runtime-corejs3": "7.8.4",
+    "async": "3.2.0",
+    "core-js": "3.4.3",
+    "embark-i18n": "^5.3.0-nightly.5",
+    "embark-utils": "^5.3.0-nightly.12"
+  },
+  "devDependencies": {
+    "embark-solo": "^5.2.3",
+    "eslint": "6.8.0",
+    "npm-run-all": "4.1.5",
+    "rimraf": "3.0.0"
+  },
+  "engines": {
+    "node": ">=10.17.0",
+    "npm": ">=6.11.3",
+    "yarn": ">=1.19.1"
+  }
+}

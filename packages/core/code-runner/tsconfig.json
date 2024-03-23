@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "declarationDir": "./dist",
+    "rootDir": "./src",
+    "tsBuildInfoFile": "./node_modules/.cache/tsc/tsconfig.embark-code-runner.tsbuildinfo"
+  },
+  "extends": "../../../tsconfig.base.json",
+  "include": [
+    "src/**/*"
+  ],
+  "references": [
+    {
+      "path": "../../embarkjs/embarkjs"
+    },
+    {
+      "path": "../../utils/testing"
+    },
+    {
+      "path": "../core"
+    },
+    {
+      "path": "../i18n"
+    },
+    {
+      "path": "../logger"
+    },
+    {
+      "path": "../utils"
+    }
+  ]
+}
